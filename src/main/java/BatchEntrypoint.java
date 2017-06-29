@@ -1,25 +1,17 @@
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.ExecutionEnvironment;
-import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.core.fs.FileSystem;
-import org.apache.flink.streaming.api.datastream.DataStream;
-import org.apache.flink.streaming.api.datastream.DataStreamSource;
-import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.*;
-import org.apache.flink.table.api.java.StreamTableEnvironment;
 import org.apache.flink.table.sinks.CsvTableSink;
-import org.apache.flink.table.sinks.TableSink;
 import org.apache.flink.table.sources.CsvTableSource;
 
-import java.io.Serializable;
-
-public class Entrypoint {
+public class BatchEntrypoint {
 
 
     public static void main(String[] args) throws Exception {
 
-        new Entrypoint().start();
+        new BatchEntrypoint().start();
     }
 
     public void start() throws Exception {
