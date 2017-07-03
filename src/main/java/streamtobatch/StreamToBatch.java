@@ -56,7 +56,7 @@ public class StreamToBatch {
     public void processByTimeWindow() throws Exception {
 
         StreamExecutionEnvironment senv = StreamExecutionEnvironment.getExecutionEnvironment();
-        senv.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+        senv.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime);
         senv.setParallelism(1);
 
         DataStream<Tuple3<Integer, Integer, Integer>> tradeStream =

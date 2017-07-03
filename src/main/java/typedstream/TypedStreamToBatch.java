@@ -53,7 +53,7 @@ public class TypedStreamToBatch {
     public void processByTimeWindow() throws Exception {
 
         StreamExecutionEnvironment senv = StreamExecutionEnvironment.getExecutionEnvironment();
-        senv.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+        senv.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime);
         senv.setParallelism(1);
 
         DataStream<Trade> tradeStream =

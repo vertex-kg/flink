@@ -56,7 +56,7 @@ public class StreamToBatchWithSql {
     public void processByTimeWindow() throws Exception {
 
         StreamExecutionEnvironment senv = StreamExecutionEnvironment.getExecutionEnvironment();
-        senv.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+        senv.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime);
         senv.setParallelism(1);
 
         DataStream<Tuple3<Integer, Integer, Integer>> tradeStream =
